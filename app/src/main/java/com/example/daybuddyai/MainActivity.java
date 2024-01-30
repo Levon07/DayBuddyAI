@@ -34,4 +34,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    public void main_layout_touch(View view){
+        if (is_popped_up){
+            popup_menu.setVisibility(View.INVISIBLE);
+            is_popped_up = false;
+        }
+    }
 }
