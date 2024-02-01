@@ -41,7 +41,10 @@
         <EditText
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_toStartOf="@+id/button"
             android:hint="@string/write_your_prompt_here" />
 
@@ -105,33 +108,41 @@
         android:id="@+id/PopUp_Menu_Layout"
         android:visibility="invisible"
         android:clickable="false"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="30dp"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="541dp"
         android:orientation="vertical"
-        android:background="@color/green_light"
+        android:background="@drawable/db_menu_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="75dp"
-            android:backgroundTint="@color/white"/>
+            android:layout_marginTop="34dp"
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:backgroundTint="@color/transparent"/>
 
         <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="75dp"
-            android:backgroundTint="@color/white"/>
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:backgroundTint="@color/transparent"/>
 
         <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="75dp"
-            android:backgroundTint="@color/white"/>
-
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:backgroundTint="@color/transparent"/>
         <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="75dp"
-            android:backgroundTint="@color/white"/>
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:backgroundTint="@color/transparent"/>
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:backgroundTint="@color/transparent"/>
+
+
+
+
 
     </LinearLayout>
 
