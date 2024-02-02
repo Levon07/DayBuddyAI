@@ -46,7 +46,8 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:layout_toStartOf="@+id/button"
-            android:hint="@string/write_your_prompt_here" />
+            android:hint="@string/write_your_prompt_here"
+            />
 
         <ImageButton
             android:id="@+id/button"
@@ -58,7 +59,6 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/db_send_button" />
-
 
     </RelativeLayout>
 
@@ -105,9 +105,17 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/Blur_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@drawable/db_blur_main_activity"
+        android:onClick="main_layout_touch"
+        android:orientation="vertical"/>
+
+    <LinearLayout
         android:id="@+id/PopUp_Menu_Layout"
-        android:visibility="invisible"
-        android:clickable="false"
+        android:visibility="gone"
         android:layout_marginTop="30dp"
         android:layout_width="250dp"
         android:layout_height="541dp"
@@ -122,7 +130,8 @@
             android:layout_marginTop="34dp"
             android:layout_width="match_parent"
             android:layout_height="97dp"
-            android:backgroundTint="@color/transparent"/>
+            android:backgroundTint="@color/transparent"
+            android:onClick="ShowPopup"/>
 
         <ImageButton
             android:layout_width="match_parent"
@@ -147,6 +156,8 @@
 
 
     </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

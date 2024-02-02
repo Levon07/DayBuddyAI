@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView resultTextView;
     LinearLayout popup_menu;
+    LinearLayout blur_layout;
     public boolean is_popped_up;
 
 
@@ -21,15 +22,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         popup_menu = findViewById(R.id.PopUp_Menu_Layout);
+        blur_layout = findViewById(R.id.Blur_Layout);
 
     }
 
     public void ShowPopup(View view){
         if (!is_popped_up){
             popup_menu.setVisibility(View.VISIBLE);
+            blur_layout.setVisibility(View.VISIBLE);
             is_popped_up = true;
         }else {
-            popup_menu.setVisibility(View.INVISIBLE);
+            popup_menu.setVisibility(View.GONE);
+            blur_layout.setVisibility(View.GONE);
             is_popped_up = false;
         }
 
@@ -37,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void main_layout_touch(View view){
         if (is_popped_up){
-            popup_menu.setVisibility(View.INVISIBLE);
+            popup_menu.setVisibility(View.GONE);
+            blur_layout.setVisibility(View.GONE);
             is_popped_up = false;
         }
     }
