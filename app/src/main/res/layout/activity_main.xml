@@ -127,7 +127,7 @@
 <!--        3 ready-->
 
         <ImageButton
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="35dp"
             android:layout_width="match_parent"
             android:layout_height="97dp"
             android:backgroundTint="@color/transparent"
