@@ -7,6 +7,7 @@
     tools:context=".MainActivity"
     android:id="@+id/main_layout"
     android:onClick="main_layout_touch"
+    android:background=""
     >
 
     <ImageView
@@ -33,19 +34,21 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_margin="5dp"
-        android:background="@drawable/db_message_bar"
+        android:background="@drawable/message_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
+            android:layout_centerVertical="true"
             android:layout_toStartOf="@+id/button"
+            android:background="@color/transparent"
             android:hint="@string/write_your_prompt_here"
             />
 
@@ -66,9 +69,11 @@
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@drawable/db_ears_bar_combined"
+        android:background="@drawable/ears_top_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+
 
 
         <ImageButton
@@ -77,6 +82,33 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:background="@drawable/db_topic_text" />
+
+
+
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/black_line" />
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="65dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/db_ear_l"
+            android:onClick="ShowPopup"/>
+
+        <ImageView
+            android:layout_width="49dp"
+            android:layout_height="43dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/db_ear_r" />
+
 
 
         <ImageView
@@ -88,16 +120,6 @@
             android:layout_marginEnd="35dp"
             android:background="@drawable/db_sittingbear_menu" />
 
-
-        <ImageButton
-            android:layout_width="52dp"
-            android:layout_height="50dp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="15dp"
-            android:background="@drawable/db_menu_lines_with_shadow"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:onClick="ShowPopup"/>
 
 
 
