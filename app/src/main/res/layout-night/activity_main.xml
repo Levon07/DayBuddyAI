@@ -7,13 +7,13 @@
     tools:context=".MainActivity"
     android:id="@+id/main_layout"
     android:onClick="main_layout_touch"
-    android:background="@color/white"
+    android:background="@color/night_mode"
     >
 
     <ImageView
         android:layout_width="300dp"
         android:layout_height="277dp"
-        android:background="@drawable/db_bg_nose_n_eyes"
+        android:background="@drawable/db_bg_nose_n_eyes_nm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,23 +83,18 @@
             android:layout_centerVertical="true"
             android:background="@drawable/db_topic_text" />
 
-
-
-
-
-
         <View
             android:layout_width="match_parent"
             android:layout_height="3.5dp"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/black_line" />
+            android:background="@drawable/black_line"/>
 
         <ImageView
             android:layout_width="75dp"
             android:layout_height="65dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/db_ear_l"
+            android:background="@drawable/db_ear_l_nm"
             android:onClick="ShowPopup"/>
 
         <ImageView
@@ -107,7 +102,7 @@
             android:layout_height="43dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/db_ear_r" />
+            android:background="@drawable/db_ear_r_nm" />
 
 
 
@@ -146,7 +141,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-<!--        3 ready-->
+        <!--        3 ready-->
 
         <ImageButton
             android:layout_marginTop="35dp"
@@ -180,7 +175,6 @@
 
 
     </LinearLayout>
-
 
 
 

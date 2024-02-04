@@ -2,6 +2,7 @@ package com.example.daybuddyai;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 
@@ -45,5 +46,9 @@ public class MainActivity extends AppCompatActivity {
             blur_layout.setVisibility(View.GONE);
             is_popped_up = false;
         }
+    }
+
+    public void themes(View view){
+        setContentView(R.layout.themes_layout);
     }
 }

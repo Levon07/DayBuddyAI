@@ -6,4 +6,5 @@
     <color name="green_light">#A8CCCC</color>
     <color name="transparent_gray">#80B3B3B3</color>
     <color name="transparent">#00A8CCCC</color>
+    <color name="night_mode">#181824</color>
 </resources>
