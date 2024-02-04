@@ -48,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void themes(View view){
-        setContentView(R.layout.themes_layout);
+    public void OnClickThemes(View view){
+
+        Intent intent = new Intent(MainActivity.this, Themes.class);
+        startActivity(intent);
     }
 }

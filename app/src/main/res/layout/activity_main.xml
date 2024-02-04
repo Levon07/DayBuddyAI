@@ -173,7 +173,7 @@
             android:layout_width="match_parent"
             android:layout_height="97dp"
             android:backgroundTint="@color/transparent"
-            android:onClick="Themes"/>
+            android:onClick="OnClickThemes"/>
 
 
 

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Themes"
+    android:background="@drawable/gradient_dark_light">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/gradient_dark_light" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/black_line" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/gradient_light_dark" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_night"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/night_mode_bear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_night"
+        app:layout_constraintEnd_toEndOf="@+id/view_night"
+        app:layout_constraintStart_toStartOf="@+id/view_night"
+        app:layout_constraintTop_toTopOf="@+id/view_night"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/bear_night_theme"/>
+
+    <View
+        android:id="@+id/view_day"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        android:background="@drawable/day_mode_bear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="100dp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_day"
+        app:layout_constraintEnd_toEndOf="@+id/view_day"
+        app:layout_constraintStart_toStartOf="@+id/view_day"
+        app:layout_constraintTop_toTopOf="@+id/view_day"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/bear_day_theme" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
