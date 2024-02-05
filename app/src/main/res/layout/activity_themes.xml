@@ -7,6 +7,8 @@
     tools:context=".Themes"
     android:background="@drawable/gradient_dark_light">
 
+
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -54,7 +56,7 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/bear_night_theme"
-        android:onClick="Set_Theme"/>
+        android:onClick="Set_Theme_Night"/>
 
     <View
         android:id="@+id/view_day"
@@ -76,7 +78,15 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/bear_day_theme"
-        android:onClick="Set_Theme"/>
+        android:onClick="Set_Theme_Light"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/blue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="Back"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

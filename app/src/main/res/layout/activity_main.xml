@@ -19,112 +19,133 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/resultTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/message_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <EditText
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/button"
-            android:background="@color/transparent"
-            android:hint="@string/write_your_prompt_here"
-            />
-
-        <ImageButton
-            android:id="@+id/button"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/db_send_button" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/ears_top_bar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="70dp"
+            android:background="@drawable/ears_top_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
 
 
-        <ImageButton
-            android:layout_width="221dp"
-            android:layout_height="50dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/db_topic_text" />
+            <ImageButton
+                android:layout_width="221dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/db_topic_text" />
 
 
 
 
 
 
-        <View
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/black_line" />
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/db_ear_l"
+                android:onClick="ShowPopup"/>
+
+            <ImageView
+                android:layout_width="49dp"
+                android:layout_height="43dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/db_ear_r" />
+
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="35dp"
+                android:background="@drawable/db_sittingbear_menu" />
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/output_text"
             android:layout_width="match_parent"
-            android:layout_height="3.5dp"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/black_line" />
-
-        <ImageView
-            android:layout_width="75dp"
-            android:layout_height="65dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/db_ear_l"
-            android:onClick="ShowPopup"/>
-
-        <ImageView
-            android:layout_width="49dp"
-            android:layout_height="43dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/db_ear_r" />
-
-
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="35dp"
-            android:background="@drawable/db_sittingbear_menu" />
+            android:textSize="20dp"
+            android:text="Hello"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:scrollbars="vertical"
+            android:overScrollMode="always"/>
 
 
 
 
 
-    </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/layout_input"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/message_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/input_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/generate_button"
+                android:background="@color/transparent"
+                android:hint="@string/write_your_prompt_here"
+                />
+
+            <ImageButton
+                android:id="@+id/generate_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/db_send_button" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/Blur_Layout"
