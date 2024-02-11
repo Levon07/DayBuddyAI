@@ -89,17 +89,16 @@
 
 
 
-        <TextView
-            android:id="@+id/output_text"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_chat"
             android:layout_width="match_parent"
-            android:textSize="20dp"
-            android:text=""
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/layout_input"
+            android:padding="16dp"
             android:layout_weight="1"
             android:clipToPadding="false"
             android:scrollbars="vertical"
             android:overScrollMode="always"/>
-
 
 
 
@@ -117,7 +116,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <EditText
-                android:id="@+id/input_text"
+                android:id="@+id/edit_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -173,8 +172,7 @@
             android:layout_marginTop="35dp"
             android:layout_width="match_parent"
             android:layout_height="97dp"
-            android:backgroundTint="@color/transparent"
-            android:onClick="ShowPopup"/>
+            android:backgroundTint="@color/transparent" />
 
         <ImageButton
             android:layout_width="match_parent"
