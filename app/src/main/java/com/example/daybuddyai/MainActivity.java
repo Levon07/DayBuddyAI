@@ -38,12 +38,13 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(new ChatItemDecoration(spacingBetweenBubbles));
         ImageButton sendButton = findViewById(R.id.generate_button);
         EditText inputEditText = findViewById(R.id.edit_text_input);
+
         sendButton.setOnClickListener(v -> {
             String userMessage = inputEditText.getText().toString().trim();
             if (!userMessage.isEmpty()) {
-                addMessageToChat(new ChatMessage(userMessage, true));
+                addMessageToChat(new ChatMessage( userMessage, true));
                 // ask chat gpt
-                askChatGpt(userMessage);
+                askChatGpt("Make me a time table with this information and put this sign * before every task, write every task in a new row, write only tasks no other messages " + userMessage);
                 inputEditText.setText("");
             }
         });
