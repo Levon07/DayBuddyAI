@@ -48,4 +48,6 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     //recycle view
     implementation ("androidx.recyclerview:recyclerview:1.3.0")
+    //splashscreen
+    implementation ("androidx.core:core-splashscreen:1.1.0-alpha02")
 }
