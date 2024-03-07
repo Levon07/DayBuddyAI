@@ -2,6 +2,7 @@ package com.example.daybuddyai;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,10 +25,15 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout popup_menu;
     LinearLayout blur_layout;
     public boolean is_popped_up;
+    public String responsemessage;
+
+    Button approve_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        approve_btn = findViewById(R.id.Approve);
         popup_menu = findViewById(R.id.PopUp_Menu_Layout);
         blur_layout = findViewById(R.id.Blur_Layout);
         recyclerView = findViewById(R.id.recycler_view_chat);
@@ -40,12 +48,14 @@ public class MainActivity extends AppCompatActivity {
         EditText inputEditText = findViewById(R.id.edit_text_input);
 
         sendButton.setOnClickListener(v -> {
+            Anim_UPnDOWN(approve_btn);
             String userMessage = inputEditText.getText().toString().trim();
             if (!userMessage.isEmpty()) {
                 addMessageToChat(new ChatMessage( userMessage, true));
                 // ask chat gpt
-                askChatGpt("Make me a time table with this information and put this sign * before every task, write every task in a new row, write only tasks no other messages " + userMessage);
+                askChatGpt("Make me a time table with this information and put this sign * before and after every task, write every task in a new row, write only tasks no other messages " + userMessage);
                 inputEditText.setText("");
+
             }
         });
     }
@@ -75,6 +85,32 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(MainActivity.this, Themes.class);
         startActivity(intent);
+    }
+
+    public void Anim_UPnDOWN(Button button){
+        button.animate().translationY(-25).setDuration(500);
+        button.animate().translationY(25).setDuration(500).setStartDelay(500);
+    }
+
+    public void Approve_TT(View view){
+        ArrayList<String> tasklist = new ArrayList<String>();
+        if(!Objects.equals(responsemessage, "")){
+            while(!Objects.equals(responsemessage, "")){
+                int a,b;
+                String temp;
+                StringBuilder sb = new StringBuilder(responsemessage);
+                a = responsemessage.indexOf("*");
+                sb.deleteCharAt(a);
+                responsemessage = sb.toString();
+                b = responsemessage.indexOf("*");
+                sb.deleteCharAt(b);
+                responsemessage = sb.toString();
+                temp = responsemessage.substring(a, b);
+                responsemessage = responsemessage.replace(temp, "");
+                tasklist.add(temp);
+            }
+        }
+
     }
 
 
@@ -122,6 +158,8 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     OpenAIResponseModel responseBody = response.body();
                     String generatedText = responseBody.getChoices()[0].getMessage().getContent();
+
+                    responsemessage = generatedText;
                     addMessageToChat(new ChatMessage(generatedText, false));
                 } else {
                     // Handle API error

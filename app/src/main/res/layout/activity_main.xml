@@ -20,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -34,18 +35,12 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
-
-
             <ImageButton
                 android:layout_width="221dp"
                 android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/db_topic_text" />
-
-
-
-
 
 
             <View
@@ -60,7 +55,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/db_ear_l"
-                android:onClick="ShowPopup"/>
+                android:onClick="ShowPopup" />
 
             <ImageView
                 android:layout_width="49dp"
@@ -68,7 +63,6 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/db_ear_r" />
-
 
 
             <ImageView
@@ -81,28 +75,44 @@
                 android:background="@drawable/db_sittingbear_menu" />
 
 
-
-
-
         </RelativeLayout>
 
-
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_chat"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/layout_input"
-            android:padding="16dp"
             android:layout_weight="1"
-            android:clipToPadding="false"
-            android:scrollbars="vertical"
-            android:overScrollMode="always"/>
+            android:layout_above="@+id/layout_input"
+            android:orientation="horizontal">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_chat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:overScrollMode="always"
+                android:padding="16dp"
+                android:scrollbars="vertical" />
+
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="match_parent">
+
+
+                <Button
+                    android:id="@+id/Approve"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/green_light"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="Approve_TT"/>
+
+            </RelativeLayout>
 
 
 
-
+        </LinearLayout>
 
 
         <RelativeLayout
@@ -119,15 +129,14 @@
                 android:id="@+id/edit_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_centerVertical="true"
                 android:layout_toStartOf="@+id/generate_button"
                 android:background="@color/transparent"
-                android:hint="@string/write_your_prompt_here"
-                />
+                android:hint="@string/write_your_prompt_here" />
 
             <ImageButton
                 android:id="@+id/generate_button"
@@ -141,6 +150,7 @@
                 android:background="@drawable/db_send_button" />
 
         </RelativeLayout>
+
 
 
 
