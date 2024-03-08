@@ -50,4 +50,5 @@ dependencies {
     implementation ("androidx.recyclerview:recyclerview:1.3.0")
     //splashscreen
     implementation ("androidx.core:core-splashscreen:1.1.0-alpha02")
+
 }

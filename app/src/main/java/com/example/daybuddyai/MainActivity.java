@@ -2,7 +2,6 @@ package com.example.daybuddyai;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +11,9 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.daybuddyai.adapter.ChatAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout popup_menu;
     LinearLayout blur_layout;
     public boolean is_popped_up;
-    public String responsemessage;
+    public String responsemessage = null;
 
     Button approve_btn;
     @Override
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             if (!userMessage.isEmpty()) {
                 addMessageToChat(new ChatMessage( userMessage, true));
                 // ask chat gpt
-                askChatGpt("Make me a time table with this information and put this sign * before and after every task, write every task in a new row, write only tasks no other messages " + userMessage);
+                askChatGpt("Make me a time table with this information and put this sign * before every task and put this sign * after every task, write every task in a new row, write only tasks no other messages " + userMessage);
                 inputEditText.setText("");
 
             }
@@ -94,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void Approve_TT(View view){
         ArrayList<String> tasklist = new ArrayList<String>();
-        if(!Objects.equals(responsemessage, "")){
-            while(!Objects.equals(responsemessage, "")){
+       if(responsemessage.length() > 1){
+            while(responsemessage.length() > 1){
                 int a,b;
                 String temp;
                 StringBuilder sb = new StringBuilder(responsemessage);
@@ -109,7 +111,12 @@ public class MainActivity extends AppCompatActivity {
                 responsemessage = responsemessage.replace(temp, "");
                 tasklist.add(temp);
             }
-        }
+
+            Intent intent = new Intent(MainActivity.this, timetables_activity.class);
+            intent.putExtra("response",tasklist);
+            startActivity(intent);
+
+       }
 
     }
 
