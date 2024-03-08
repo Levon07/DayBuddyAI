@@ -2,6 +2,7 @@ package com.example.daybuddyai;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout blur_layout;
     public boolean is_popped_up;
     public String responsemessage = null;
+
+    public boolean flag = true;
 
     Button approve_btn;
     @Override
@@ -90,8 +93,59 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Anim_UPnDOWN(Button button){
-        button.animate().translationY(-25).setDuration(500);
-        button.animate().translationY(25).setDuration(500).setStartDelay(500);
+
+        Handler handler = new Handler();
+
+        Runnable UP = new Runnable() {
+            @Override
+            public void run() {
+                button.animate().translationY(-25).setDuration(500);
+            }
+        };
+
+        Runnable DOWN = new Runnable() {
+            @Override
+            public void run() {
+                button.animate().translationY(25).setDuration(500);
+            }
+        };
+
+        Runnable FLAG = new Runnable() {
+            @Override
+            public void run() {
+                flag = true;
+            }
+        };
+
+        Runnable all = new Runnable() {
+            @Override
+            public void run() {
+
+                flag = false;
+
+
+                handler.postDelayed(UP, 0);
+                handler.postDelayed(DOWN, 500);
+                handler.postDelayed(UP, 1000);
+                handler.postDelayed(DOWN, 1500);
+                handler.postDelayed(UP, 2000);
+                handler.postDelayed(DOWN, 2500);
+                handler.postDelayed(UP, 3000);
+                handler.postDelayed(DOWN, 3500);
+
+                handler.postDelayed(FLAG,4000);
+
+
+            }
+        };
+
+        if(flag) {
+
+
+            handler.postDelayed(all, 100);
+
+
+        }
     }
 
     public void Approve_TT(View view){

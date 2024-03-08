@@ -27,14 +27,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="invisible"/>
+        app:layout_constraintBottom_toTopOf="@+id/buddy"
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/buddy"
         android:layout_width="210dp"
         android:layout_height="81dp"
+        android:layout_marginStart="190dp"
         android:background="@drawable/db_buddy"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ai"
         app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/day"
@@ -44,13 +46,12 @@
         android:id="@+id/ai"
         android:layout_width="117dp"
         android:layout_height="109dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="132dp"
         android:background="@drawable/db_ai"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.222"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/buddy"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="invisible"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
